@@ -2,7 +2,6 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-
 def pytest_addoption(parser):
     """Опции командной строки.
     В командную строку передается параметр вида '--language="es"'
@@ -26,3 +25,4 @@ def browser(request):
     browser.implicitly_wait(5)
     yield browser
     browser.quit()
+    

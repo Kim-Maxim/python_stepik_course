@@ -1,7 +1,7 @@
 import time
+from selenium.webdriver.common.by import By
 
 link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
-
 
 class TestProductPage:
     
@@ -14,7 +14,7 @@ class TestProductPage:
         
         # Установлено время принудительной задержки браузера
         # после открытия страницы, для визуальной проверки языка открытой страницы
-        time.sleep(5)
+        time.sleep(10)
         
         # Проверяем наличие кнопки добавления товара в корзину
-        assert browser.find_element_by_css_selector("button.btn-add-to-basket")
+        assert browser.find_element(By.CSS_SELECTOR, "button.btn-add-to-basket")
