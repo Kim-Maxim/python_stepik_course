@@ -2,8 +2,6 @@ import pytest
 import allure
 import random
 
-from selenium.webdriver.common.by import By
-
 from locators.locators import ProductPageLocators
 
 @allure.parent_suite("Интернет-магазин")
