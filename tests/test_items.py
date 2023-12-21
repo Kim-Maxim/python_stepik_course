@@ -23,7 +23,7 @@ class TestProductPage:
         ]
         link = random.sample(list, k=1)
         browser.get(''.join(link))
-        assert browser.find_element(By.CSS_SELECTOR, "button.btn-add-to-basket")
+        assert browser.find_element(By.CSS_SELECTOR, "button.btn-add-to-basket"), "The button busket have been not found"
 
     @allure.severity(allure.severity_level.NORMAL)
     @allure.title("Проверка наличия наименования товара на странице")
