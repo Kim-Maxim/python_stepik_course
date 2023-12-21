@@ -1,5 +1,7 @@
 import pytest
+import allure
 
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -16,6 +18,8 @@ def browser(request):
     browser = webdriver.Chrome(options=chrome_options)
     browser.implicitly_wait(10)
     browser.maximize_window()
-    yield browser 
+    yield browser
+    attach = browser.get_screenshot_as_png()
+    allure.attach(attach, name=f"Screenshot {datetime.today()}", attachment_type=allure.attachment_type.PNG) 
     browser.quit()
     
