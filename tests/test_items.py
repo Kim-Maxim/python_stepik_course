@@ -10,7 +10,7 @@ from locators.locators import ProductPageLocators
 class TestProductPage:
     
     @allure.severity(allure.severity_level.MINOR)
-    @allure.title("Проверка видимости кнопки 'Добавить в корзину'")
+    @allure.title("Наличие кнопки 'Добавить в корзину'")
     @pytest.mark.smoke
     def test_button_add_to_basket_is_visible(self, browser):
         """ Тест проверяет наличие кнопки добавления в корзину """
@@ -26,7 +26,7 @@ class TestProductPage:
         assert browser.find_element(*ProductPageLocators.BUTTON_ADD_BASKET), "The button busket have been not found"
 
     @allure.severity(allure.severity_level.NORMAL)
-    @allure.title("Проверка наличия наименования товара на странице")
+    @allure.title("Наличие наименования товара на странице")
     @pytest.mark.smoke
     def test_check_name_product(self, browser):
         """ Тест проверяет наличие и наименование продукта на странице """   
@@ -34,7 +34,7 @@ class TestProductPage:
         assert len(name_product) > 0, "The page of product has been not loaded"
 
     @allure.severity(allure.severity_level.NORMAL)
-    @allure.title("Проверка написания отзыва о товаре")
+    @allure.title("Написание отзыва о товаре")
     @pytest.mark.smoke
     def test_write_review(self, browser):
         """ Тест проверяет возможность написания отзыва """
@@ -44,7 +44,7 @@ class TestProductPage:
         assert title_review is not None, "The button of review is not clickable"
 
     @allure.severity(allure.severity_level.BLOCKER)
-    @allure.title("Проверка добавление товара в корзину")
+    @allure.title("Добавление товара в корзину")
     @pytest.mark.smoke
     def test_add_product_in_basket(self, browser):
         """ Тест проверяет добавление товара в корзину """
@@ -55,7 +55,7 @@ class TestProductPage:
         assert name_product in alert_text, "The product has been not added"
 
     @allure.severity(allure.severity_level.BLOCKER)
-    @allure.title("Проверка добавления товара в избранное")
+    @allure.title("Добавление товара в раздел избранное")
     @pytest.mark.xfail(reason = 'Кнопка не кликабельна')
     def test_add_to_wish_list(self, browser):
         """ Тест проверяет добавление товара в избранное """
@@ -64,7 +64,7 @@ class TestProductPage:
         assert True, "The button of add to wish list is not clickable"
 
     @allure.severity(allure.severity_level.BLOCKER)
-    @allure.title("Проверка перехода в корзину")
+    @allure.title("Переход в раздел корзины")
     @pytest.mark.smoke
     def test_open_backet(self, browser):
         """ Тест проверяет открытие корзины """
@@ -74,7 +74,7 @@ class TestProductPage:
         assert len(title_busket) > 0, "The page has been not loaded"
     
     @allure.severity(allure.severity_level.BLOCKER)
-    @allure.title("Проверка перехода в оформление")
+    @allure.title("Переход к оформлению заказа")
     @pytest.mark.smoke
     def test_proceed_to_checkout(self, browser):
         """ Тест проверяет переход к оформлению заказа """
