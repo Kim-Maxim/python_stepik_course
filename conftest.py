@@ -19,6 +19,7 @@ def browser(request):
         "prefs", {"intl.accept_languages": user_language}
     )
     chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
+    chrome_options.add_argument("--headless")
     browser = webdriver.Chrome(options=chrome_options)
     browser.implicitly_wait(10)
     browser.maximize_window()
