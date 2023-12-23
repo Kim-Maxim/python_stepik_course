@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class ProductPageLocators:
     BUTTON_ADD_BASKET = (By.CSS_SELECTOR, "button.btn-add-to-basket")
     NAME_PRODUCT = (By.XPATH, "//div[@class='col-sm-6 product_main']/h1")
