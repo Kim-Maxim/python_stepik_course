@@ -28,4 +28,4 @@ jobs:
         pip install -r requirements.txt
     - name: Test with pytest
       run: |
-        pytest -s -v -m smoke --language=es .\tests\test_items.py
+        pytest -s -v -m smoke --language=es ./tests/test_items.py
